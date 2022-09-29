@@ -1,0 +1,170 @@
+import styled from "@emotion/styled";
+import { Modal, Rate } from "antd";
+
+export const CommentsListDetail = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border-bottom: 1px solid #bdbdbd;
+  padding: 10px;
+`;
+
+export const CommentsDetailImage = styled.img`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+`;
+
+export const CommentsDetailMain = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 1100px;
+  height: 100px;
+  padding: 10px;
+`;
+
+export const CommentsDetailInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 320px;
+  margin-bottom: 5px;
+`;
+
+export const DetailInfoUser = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+`;
+
+export const DetailInfoRating = styled(Rate)`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  height: 20px;
+`;
+
+export const CommentsDetailContents = styled.div`
+  width: 800px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #4f4f4f;
+  margin-bottom: 10px;
+`;
+
+export const CommentsDetailDate = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  width: 100px;
+  height: 18px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #bdbdbd;
+`;
+
+export const CommentsDetailButton = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 70px;
+  height: 100px;
+`;
+
+export const DetailButtonEdit = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+`;
+
+export const DetailButtonDelete = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+`;
+
+export const PasswordModal = styled(Modal)``;
+
+export const ModalPasswordInput = styled.input``;
+
+export const DetailInfoPassword = styled.input`
+  width: 100px;
+  border: 1px solid #bdbdbd;
+  ::placeholder {
+    text-align: center;
+  }
+`;
+
+export const CommentsDetailContentsEdit = styled.div``;
+
+export const CommentsContentsEditInput = styled.textarea`
+  border: 1px solid #bdbdbd;
+  width: 1000px;
+  height: 40px;
+  font-size: 16px;
+`;
+
+export const CommentsEditButton = styled.button`
+  background-color: black;
+  color: white;
+  width: 80px;
+  height: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+`;
+
+export const CommentsInfoRating = styled(Rate)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 140px;
+  height: 30px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+`;
+
+export const CommentWriteContainerDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 1300px;
+  padding-right: 100px;
+  margin-bottom: 30px;
+`;
