@@ -4,11 +4,6 @@ import { FaRegThumbsUp } from "react-icons/fa";
 import { BsFillPencilFill } from "react-icons/bs";
 import { getDate } from "../../../../commons/libraries/utils";
 import { IBoardListUIProps } from "./BoardList.types";
-import Image from "next/image";
-import puppy1 from "../../../../../public/puppy1.jpeg";
-import puppy2 from "../../../../../public/puppy2.jpeg";
-import puppy3 from "../../../../../public/puppy3.jpeg";
-import puppy4 from "../../../../../public/puppy4.jpeg";
 import BoardListPagination from "../../../commons/pagination-boardList/Pagination-boardList.container";
 import moment from "moment";
 import { DatePicker } from "antd";
@@ -25,9 +20,7 @@ export default function BoardListPresenterPage(props: IBoardListUIProps) {
         <S.WrapperHeaderTitle>최고 귀여운 친구들</S.WrapperHeaderTitle>
         <S.WrapperHeaderBoard>
           <S.HeaderBoardMain>
-            <S.HeaderBoardPhoto>
-              <Image src={puppy1}></Image>
-            </S.HeaderBoardPhoto>
+            <S.HeaderBoardPhoto src="/puppy1.jpeg"></S.HeaderBoardPhoto>
             <S.HeaderBoardContents>
               <S.HeaderBoardTitle>게시물 제목입니다</S.HeaderBoardTitle>
               <S.HeaderBoardBottom>
@@ -56,9 +49,7 @@ export default function BoardListPresenterPage(props: IBoardListUIProps) {
             </S.HeaderBoardContents>
           </S.HeaderBoardMain>
           <S.HeaderBoardMain>
-            <S.HeaderBoardPhoto>
-              <Image src={puppy2}></Image>
-            </S.HeaderBoardPhoto>
+            <S.HeaderBoardPhoto src="/puppy2.jpeg"></S.HeaderBoardPhoto>
             <S.HeaderBoardContents>
               <S.HeaderBoardTitle>게시물 제목입니다</S.HeaderBoardTitle>
               <S.HeaderBoardBottom>
@@ -87,9 +78,7 @@ export default function BoardListPresenterPage(props: IBoardListUIProps) {
             </S.HeaderBoardContents>
           </S.HeaderBoardMain>
           <S.HeaderBoardMain>
-            <S.HeaderBoardPhoto>
-              <Image src={puppy3}></Image>
-            </S.HeaderBoardPhoto>
+            <S.HeaderBoardPhoto src="/puppy3.jpeg"></S.HeaderBoardPhoto>
             <S.HeaderBoardContents>
               <S.HeaderBoardTitle>게시물 제목입니다</S.HeaderBoardTitle>
               <S.HeaderBoardBottom>
@@ -118,9 +107,7 @@ export default function BoardListPresenterPage(props: IBoardListUIProps) {
             </S.HeaderBoardContents>
           </S.HeaderBoardMain>
           <S.HeaderBoardMain>
-            <S.HeaderBoardPhoto>
-              <Image src={puppy4}></Image>
-            </S.HeaderBoardPhoto>
+            <S.HeaderBoardPhoto src="/puppy4.jpeg"></S.HeaderBoardPhoto>
             <S.HeaderBoardContents>
               <S.HeaderBoardTitle>게시물 제목입니다</S.HeaderBoardTitle>
               <S.HeaderBoardBottom>
@@ -156,24 +143,24 @@ export default function BoardListPresenterPage(props: IBoardListUIProps) {
           placeholder="제목을 검색해주세요."
           onChange={props.onChangeSearch}
         ></S.WrapperSearchInput>
-        <RangePicker
+        <S.RangePickerStyle
           defaultValue={[
             moment("2022-01-01", dateFormat),
             moment("2022-01-31", dateFormat),
           ]}
           format={dateFormat}
-          style={{ width: "270px", height: "52px", fontSize: "18px" }}
-        ></RangePicker>
+        ></S.RangePickerStyle>
         <S.WrapperSearchButton onClick={props.onClickSearch}>
           검색하기
         </S.WrapperSearchButton>
       </S.WrapperSearch>
+
       <S.WrapperBody>
         <S.WrapperBodyHead>
           <S.BodyHeadColumn>번호</S.BodyHeadColumn>
           <S.BodyHeadColumnTitle>제목</S.BodyHeadColumnTitle>
-          <S.BodyHeadColumn>작성자</S.BodyHeadColumn>
-          <S.BodyHeadColumn>날짜</S.BodyHeadColumn>
+          <S.BodyHeadWriter>작성자</S.BodyHeadWriter>
+          <S.BodyHeadDate>날짜</S.BodyHeadDate>
         </S.WrapperBodyHead>
         {props.data?.fetchBoards.map((el) => (
           <S.WrapperBodyList key={el._id}>
@@ -195,7 +182,7 @@ export default function BoardListPresenterPage(props: IBoardListUIProps) {
                 ))}
             </S.BodyListColumnTitle>
             <S.BodyListColumn>{el.writer}</S.BodyListColumn>
-            <S.BodyListColumn>{getDate(el.createdAt)}</S.BodyListColumn>
+            <S.BodyListDate>{getDate(el.createdAt)}</S.BodyListDate>
           </S.WrapperBodyList>
         ))}
       </S.WrapperBody>
@@ -208,7 +195,6 @@ export default function BoardListPresenterPage(props: IBoardListUIProps) {
           ></BoardListPagination>
         </S.WrapperBottomPageSelect>
         <S.WrapperBottomWriteButton onClick={props.onClickMoveToCreateBoard}>
-          <BsFillPencilFill style={{ width: "20px", height: "20px" }} />
           게시물 등록하기
         </S.WrapperBottomWriteButton>
       </S.WrapperBottom>
