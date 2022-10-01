@@ -7,6 +7,7 @@ export const globalStyles = css`
     margin: 0;
     box-sizing: border-box;
     font-family: "IM_Hyemin-Bold";
+    font-size: 16px;
   }
 
   @font-face {

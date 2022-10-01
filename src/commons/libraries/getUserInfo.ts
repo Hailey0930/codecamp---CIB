@@ -1,5 +1,4 @@
 import { gql, useQuery } from "@apollo/client";
-import { useEffect, useState } from "react";
 
 const FETCH_USER_LOGGED_IN = gql`
   query fetchUserLoggedIn {

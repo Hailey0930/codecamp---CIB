@@ -4,12 +4,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  width: 1300px;
-  margin: 100px;
-  padding: 30px;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 `;
 
 export const WrapperHeader = styled.div`
