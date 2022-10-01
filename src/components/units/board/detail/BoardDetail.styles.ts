@@ -1,9 +1,26 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 100%;
+  padding: 50px 0px;
+  margin: 100px 0px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+
+  @media ${breakPoints.tablet} {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 90%;
+    margin-left: 5%;
+  }
 `;
 
 export const WrapperHeader = styled.div`
@@ -11,18 +28,25 @@ export const WrapperHeader = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  width: 996px;
+  width: 80%;
   border-bottom: 1px solid #bdbdbd;
-  padding: 10px;
+  padding: 15px 1%;
 `;
 
 export const Profile = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
 
-  width: 250px;
+  width: 45%;
+
+  @media ${breakPoints.tablet} {
+    width: 70%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+  }
 `;
 
 export const ProfileImage = styled.img`
@@ -31,22 +55,30 @@ export const ProfileImage = styled.img`
   justify-content: center;
   align-items: center;
 
-  width: 70px;
+  width: 15%;
   height: 70px;
+
+  @media ${breakPoints.tablet} {
+    width: 20%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 20%;
+  }
 `;
 
 export const ProfileDetail = styled.div`
-  padding: 10px;
+  padding: 10px 3%;
 `;
 
 export const ProfileDetailName = styled.div`
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 36px;
 `;
 
 export const ProfileDetailCreateAt = styled.div`
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 400px;
   line-height: 24px;
   color: #828282;
@@ -59,11 +91,19 @@ export const BoardInfo = styled.div`
   justify-content: space-around;
   align-items: center;
 
-  width: 100px;
+  width: 15%;
+
+  @media ${breakPoints.tablet} {
+    width: 17%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 25%;
+  }
 `;
 
 export const BoardInfoUrl = styled.button`
-  width: 27px;
+  width: 7%;
   height: 15px;
   background: transparent;
   border: none;
@@ -71,7 +111,7 @@ export const BoardInfoUrl = styled.button`
 `;
 
 export const BoardInfoGps = styled.button`
-  width: 27px;
+  width: 7%;
   height: 15px;
   background: transparent;
   border: none;
@@ -83,8 +123,8 @@ export const WrapperBody = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 996px;
-  padding: 10px;
+  width: 80%;
+  padding: 15px 1%;
   margin: 30px 0px;
 `;
 
@@ -102,12 +142,20 @@ export const BoardDetailTitle = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  width: 900px;
-  font-size: 40px;
+  width: 100%;
+  padding: 0px 2%;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 53px;
   margin-bottom: 15px;
-  padding: 5px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 2.3rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 2rem;
+  }
 `;
 
 export const BoardDetailImage = styled.div`
@@ -115,14 +163,22 @@ export const BoardDetailImage = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 900px;
+  width: 80%;
   margin-bottom: 15px;
 `;
 
 export const DetailImage = styled.img`
-  width: 900px;
+  width: 100%;
   height: 480px;
   margin-bottom: 15px;
+
+  @media ${breakPoints.tablet} {
+    height: 400px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 300px;
+  }
 `;
 
 export const BoardDetailContents = styled.div`
@@ -131,12 +187,20 @@ export const BoardDetailContents = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
 
-  width: 900px;
-  font-size: 25px;
+  width: 100%;
+  padding: 0px 2%;
+  font-size: 1.5625rem;
   font-weight: 400;
   line-height: 24px;
   margin-top: 10px;
-  padding: 10px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 1.5rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.4rem;
+  }
 `;
 
 export const BoardYoutubeUrl = styled.div`
@@ -145,8 +209,18 @@ export const BoardYoutubeUrl = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 486px;
+  width: 50%;
+  height: 300px;
   margin-bottom: 100px;
+
+  @media ${breakPoints.tablet} {
+    width: 50%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 90%;
+    height: 230px;
+  }
 `;
 
 export const BoardReaction = styled.div`
@@ -154,8 +228,8 @@ export const BoardReaction = styled.div`
   flex-direction: row;
   justify-content: space-around;
 
-  width: 150px;
-  padding: 10px;
+  width: 30%;
+  padding: 10px 1%;
 `;
 
 export const BoardReactionWrapper = styled.div`
@@ -170,7 +244,7 @@ export const BoardReactionLikeButton = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 30px;
+  width: 60%;
   height: 30px;
   margin-bottom: 5px;
   cursor: pointer;
@@ -188,9 +262,9 @@ export const BoardReactionLikeText = styled.div`
   flex-direction: row;
   justify-content: center;
 
-  width: 50px;
+  width: 60%;
   height: 27px;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 27px;
   text-align: center;
@@ -202,7 +276,7 @@ export const BoardReactionDislikeButton = styled.button`
   flex-direction: row;
   justify-content: center;
 
-  width: 30px;
+  width: 60%;
   height: 30px;
   margin-bottom: 5px;
   cursor: pointer;
@@ -220,9 +294,9 @@ export const BoardReactionDislikeText = styled.div`
   flex-direction: row;
   justify-content: center;
 
-  width: 50px;
+  width: 60%;
   height: 27px;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 27px;
   text-align: center;
@@ -234,8 +308,8 @@ export const WrapperBottom = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 1200px;
-  margin: 0px 100px;
+  width: 100%;
+  padding: 50px 0px;
 `;
 
 export const WrapperBottomButton = styled.div`
@@ -243,10 +317,9 @@ export const WrapperBottomButton = styled.div`
   flex-direction: row;
   justify-content: space-around;
 
-  width: 1300px;
+  width: 100%;
   height: 100px;
   border-bottom: 1px solid #bdbdbd;
-  margin-left: 100px;
 `;
 
 export const BoardButton = styled.button`
@@ -255,9 +328,9 @@ export const BoardButton = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 179px;
+  width: 15%;
   height: 45px;
-  padding: 14px 60px;
+  font-size: 1rem;
   background-color: #ffffff;
   border: 1px solid #bdbdbd;
   cursor: pointer;
@@ -265,5 +338,14 @@ export const BoardButton = styled.button`
   :hover {
     background-color: #fed703;
     border-color: #ffffff;
+  }
+
+  @media ${breakPoints.tablet} {
+    font-size: 1rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 25%;
+    font-size: 0.9rem;
   }
 `;

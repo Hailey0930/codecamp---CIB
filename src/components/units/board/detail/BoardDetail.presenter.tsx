@@ -77,8 +77,8 @@ export default function BoardDetailPresenter(
             <S.BoardYoutubeUrl>
               <ReactPlayer
                 url={props.boardData?.fetchBoard.youtubeUrl}
-                width="486px"
-                height="240px"
+                width="100%"
+                height="100%"
                 playing={true}
                 controls={true}
               ></ReactPlayer>
