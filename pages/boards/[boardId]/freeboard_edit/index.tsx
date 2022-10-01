@@ -25,11 +25,11 @@ const FETCH_BOARD = gql`
 
 export default function FreeBoardMutationPage() {
   const router = useRouter();
-  if (typeof router.query.boardId !== "string") return;
+
   const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(
     FETCH_BOARD,
     {
-      variables: { boardId: router.query.boardId },
+      variables: { boardId: String(router.query.boardId) },
     }
   );
 
