@@ -10,7 +10,7 @@ import { createUploadLink } from "apollo-upload-client";
 import { ReactNode, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { getAccessToken } from "../../../commons/libraries/getAcessToken";
-import { accessTokenState } from "../../../commons/store";
+import { accessTokenState, isLoadedState } from "../../../commons/store";
 
 interface IApolloSettingProps {
   children: ReactNode;
@@ -20,10 +20,12 @@ const APOLLO_CACHE = new InMemoryCache();
 
 export default function ApolloSetting(props: IApolloSettingProps) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [, setIsLoaded] = useRecoilState(isLoadedState);
 
   useEffect(() => {
     getAccessToken().then((newAccessToken) => {
       setAccessToken(newAccessToken);
+      setIsLoaded(true);
     });
   }, []);
 

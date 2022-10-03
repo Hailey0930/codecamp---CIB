@@ -47,73 +47,65 @@ export default function BoardWritePresenter(props: IBoardWritePresenterProps) {
           </S.BodyInfo>
 
           <S.BodyContents>
-            <S.BodyTitleInput>
-              <S.Title>제목</S.Title>
-              <S.ContentsInput
-                placeholder="제목을 작성해주세요."
-                type="text"
-                onChange={props.onChangeTitle}
-                defaultValue={props.data?.fetchBoard.title}
-              ></S.ContentsInput>
-              <S.InputError>{props.titleError}</S.InputError>
-            </S.BodyTitleInput>
+            <S.Title>제목</S.Title>
+            <S.ContentsInput
+              placeholder="제목을 작성해주세요."
+              type="text"
+              onChange={props.onChangeTitle}
+              defaultValue={props.data?.fetchBoard.title}
+            ></S.ContentsInput>
+            <S.InputError>{props.titleError}</S.InputError>
 
-            <S.BodyTitleInput>
-              <S.Title>내용</S.Title>
-              <S.ContentsInputdetail
-                placeholder="내용을 작성해주세요."
-                onChange={props.onChangeContents}
-                defaultValue={props.data?.fetchBoard.contents}
-              ></S.ContentsInputdetail>
-              <S.InputError>{props.contentsError}</S.InputError>
-            </S.BodyTitleInput>
+            <S.Title>내용</S.Title>
+            <S.ContentsInputDetail
+              placeholder="내용을 작성해주세요."
+              onChange={props.onChangeContents}
+              defaultValue={props.data?.fetchBoard.contents}
+            ></S.ContentsInputDetail>
+            <S.InputError>{props.contentsError}</S.InputError>
 
-            <S.BodyTitleInput>
-              <S.Title>주소</S.Title>
-              <S.AddressSearch>
-                <S.ContentsInputAddress
-                  type="num"
-                  placeholder="우편번호"
-                  readOnly
-                  value={
-                    props.zipcode ||
-                    props.data?.fetchBoard.boardAddress?.zipcode ||
-                    ""
-                  }
-                ></S.ContentsInputAddress>
-                <S.AddressButton onClick={props.onClickAddressSearch}>
-                  우편번호 검색
-                </S.AddressButton>
-              </S.AddressSearch>
-              <S.ContentsInput
-                type="text"
-                placeholder="기본 주소"
+            <S.Title>주소</S.Title>
+            <S.AddressSearch>
+              <S.ContentsInputAddress
+                type="num"
+                placeholder="우편번호"
                 readOnly
                 value={
-                  props.address ||
-                  props.data?.fetchBoard.boardAddress?.address ||
+                  props.zipcode ||
+                  props.data?.fetchBoard.boardAddress?.zipcode ||
                   ""
                 }
-              ></S.ContentsInput>
-              <S.ContentsInput
-                type="text"
-                placeholder="상세 주소"
-                onChange={props.onChangeAddressDetail}
-                defaultValue={
-                  props.data?.fetchBoard.boardAddress?.addressDetail || ""
-                }
-              ></S.ContentsInput>
-            </S.BodyTitleInput>
+              ></S.ContentsInputAddress>
+              <S.AddressButton onClick={props.onClickAddressSearch}>
+                우편번호 검색
+              </S.AddressButton>
+            </S.AddressSearch>
+            <S.ContentsInput
+              type="text"
+              placeholder="기본 주소"
+              readOnly
+              value={
+                props.address ||
+                props.data?.fetchBoard.boardAddress?.address ||
+                ""
+              }
+            ></S.ContentsInput>
+            <S.ContentsInput
+              type="text"
+              placeholder="상세 주소"
+              onChange={props.onChangeAddressDetail}
+              defaultValue={
+                props.data?.fetchBoard.boardAddress?.addressDetail || ""
+              }
+            ></S.ContentsInput>
 
-            <S.BodyTitleInput>
-              <S.Title>유튜브</S.Title>
-              <S.ContentsInput
-                placeholder="링크를 복사해주세요."
-                type="text"
-                onChange={props.onChangeYoutubeUrl}
-                defaultValue={props.data?.fetchBoard.youtubeUrl}
-              ></S.ContentsInput>
-            </S.BodyTitleInput>
+            <S.Title>유튜브</S.Title>
+            <S.ContentsInput
+              placeholder="링크를 복사해주세요."
+              type="text"
+              onChange={props.onChangeYoutubeUrl}
+              defaultValue={props.data?.fetchBoard.youtubeUrl}
+            ></S.ContentsInput>
 
             <S.BodyTitleInputPhoto>
               <S.Title>사진 첨부</S.Title>
@@ -128,21 +120,6 @@ export default function BoardWritePresenter(props: IBoardWritePresenterProps) {
                 ))}
               </S.PhotoDiv>
             </S.BodyTitleInputPhoto>
-            <S.BodyTitleInputMainSetting>
-              <S.Title>메인 설정</S.Title>
-              <S.MainSetting>
-                <S.MainSettingRadio
-                  type="radio"
-                  name="MainSetting"
-                ></S.MainSettingRadio>{" "}
-                유튜브
-                <S.MainSettingRadio
-                  type="radio"
-                  name="MainSetting"
-                ></S.MainSettingRadio>{" "}
-                사진
-              </S.MainSetting>
-            </S.BodyTitleInputMainSetting>
           </S.BodyContents>
         </S.WrapperBody>
 

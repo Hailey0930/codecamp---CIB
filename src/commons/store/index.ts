@@ -14,3 +14,8 @@ export const ChangeUserInfoState = atom({
   key: "ChangeUserInfoState",
   default: false,
 });
+
+export const isLoadedState = atom({
+  key: "isLoadedState",
+  default: false,
+});

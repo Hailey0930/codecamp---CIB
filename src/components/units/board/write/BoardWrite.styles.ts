@@ -1,14 +1,16 @@
 import styled from "@emotion/styled";
 import { Modal } from "antd";
 import DaumPostcodeEmbed from "react-daum-postcode";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  margin: 100px;
-  width: 1300px;
+  margin: 100px 0px;
+  width: 90vw;
+  padding: 30px 3%;
   background-color: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 `;
@@ -20,10 +22,18 @@ export const WrapperHeader = styled.div`
 
   width: 100%;
   height: 53px;
-  padding: 50px;
-  font-size: 40px;
+  padding: 50px 0px;
+  font-size: 2.5rem;
   font-weight: 700;
   font-family: "SDSamliphopangche_Outline";
+
+  @media ${breakPoints.tablet} {
+    font-size: 2.3rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 2rem;
+  }
 `;
 
 export const WrapperBody = styled.div`
@@ -32,8 +42,6 @@ export const WrapperBody = styled.div`
   align-items: center;
 
   width: 100%;
-  height: 1400px;
-  padding: 10px 20px;
   margin-top: 30px;
 `;
 
@@ -43,33 +51,39 @@ export const BodyInfo = styled.div`
   justify-content: space-between;
 
   width: 100%;
-  padding: 10px;
+  padding: 10px 0px;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const BodyTitleInput = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  width: 47%;
   margin-bottom: 10px;
+
+  @media ${breakPoints.mobile} {
+    width: 90%;
+    margin-left: 5%;
+  }
 `;
 
 export const Title = styled.div`
   margin-bottom: 10px;
-  font-size: 16px;
+  margin-top: 20px;
+  font-size: 1rem;
   font-weight: 500;
   color: black;
 `;
 
-export const PhotoDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 export const InfoInput = styled.input`
-  width: 486px;
+  width: 100%;
   height: 52px;
   ::placeholder {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     color: #c4c4c4;
     line-height: 24px;
@@ -83,8 +97,8 @@ export const InfoInput = styled.input`
 
 export const InputError = styled.div`
   color: red;
-  padding: 5px;
-  font-size: 13px;
+  padding: 0px 0.5%;
+  font-size: 0.9rem;
 `;
 
 export const BodyContents = styled.div`
@@ -92,35 +106,43 @@ export const BodyContents = styled.div`
   flex-direction: column;
 
   width: 100%;
-  padding: 10px;
+  padding: 10px 0px;
+
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 
 export const ContentsInput = styled.input`
   width: 100%;
   height: 52px;
+  margin-bottom: 10px;
+
   ::placeholder {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     color: #c4c4c4;
     line-height: 24px;
     text-align: start;
   }
-  margin-bottom: 10px;
+
   :focus {
     outline: 2px solid #fed703;
   }
 `;
 
-export const ContentsInputdetail = styled.textarea`
+export const ContentsInputDetail = styled.textarea`
   width: 100%;
   height: 480px;
+  margin-bottom: 10px;
+
   ::placeholder {
     font-size: 16px;
     font-weight: 400;
     color: #c4c4c4;
     line-height: 24px;
   }
-  margin-bottom: 10px;
+
   :focus {
     outline: 2px solid #fed703;
   }
@@ -131,31 +153,49 @@ export const AddressSearch = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  width: 220px;
+  width: 25%;
   height: 52px;
   margin-bottom: 20px;
+
+  @media ${breakPoints.tablet} {
+    width: 40%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 50%;
+  }
 `;
 
 export const ContentsInputAddress = styled.input`
-  width: 77px;
+  width: 40%;
   height: 52px;
   border: 1px solid #bdbdbd;
+
   ::placeholder {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     color: #c4c4c4;
     line-height: 24px;
-    text-align: start;
+    text-align: center;
+
+    @media ${breakPoints.tablet} {
+      font-size: 0.9rem;
+    }
+
+    @media ${breakPoints.mobile} {
+      font-size: 0.9rem;
+    }
   }
+
   :focus {
     outline: 2px solid #fed703;
   }
 `;
 
 export const AddressButton = styled.button`
-  width: 124px;
+  width: 50%;
   height: 52px;
-
+  font-size: 0.9rem;
   background-color: black;
   color: white;
   cursor: pointer;
@@ -165,68 +205,59 @@ export const AddressButton = styled.button`
     color: black;
     border: none;
   }
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.9rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const BodyTitleInputPhoto = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 300px;
+  width: 100%;
   margin-bottom: 30px;
 `;
 
-export const Photo = styled.div`
+export const PhotoDiv = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 
-  width: 100%;
-  height: 78px;
+  @media ${breakPoints.mobile} {
+    justify-content: space-between;
+  }
 `;
-
-export const PhotoButton = styled.button`
-  width: 78px;
-  height: 78px;
-  cursor: pointer;
-`;
-
-export const BodyTitleInputMainSetting = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  width: 150px;
-`;
-export const MainSetting = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-`;
-
-export const MainSettingRadio = styled.input``;
 
 export const WrapperButton = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-  width: 500px;
-  padding: 20px 30px 50px 30px;
+  width: 100%;
+  margin: 20px 0px;
 `;
 
 export const MutationButton = styled.button`
-  width: 179px;
+  width: 15%;
   height: 52px;
-  padding: 10px 60px;
   border: 1px solid #ffffff;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 24px;
   cursor: pointer;
   background-color: ${(props) => (props.isActive ? "#ffd600" : "none")};
+
+  @media ${breakPoints.tablet} {
+    width: 20%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 35%;
+  }
 `;
 
 export const AddressModal = styled(Modal)``;

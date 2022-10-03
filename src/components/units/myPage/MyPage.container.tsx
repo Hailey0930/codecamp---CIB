@@ -2,11 +2,10 @@ import { useMutation } from "@apollo/client";
 import { message, Modal } from "antd";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useRecoilState } from "recoil";
 import { getUserInfo } from "../../../commons/libraries/getUserInfo";
-import { ChangeUserInfoState, logInStatusState } from "../../../commons/store";
-import { useAuth } from "../../commons/hooks/useAuth";
+import { logInStatusState } from "../../../commons/store";
 import MyPagePresenter from "./MyPage.presenter";
 import {
   LOGOUT_USER,
@@ -18,9 +17,7 @@ declare const window: typeof globalThis & {
 };
 
 export default function MyPageContainer() {
-  const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
-
-  useAuth();
+  const [, setLogInStatus] = useRecoilState(logInStatusState);
 
   const UserInfo = getUserInfo();
 
@@ -45,13 +42,10 @@ export default function MyPageContainer() {
   const onClickLogout = () => {
     try {
       logoutUser();
-      localStorage.removeItem("accessToken");
-      localStorage.removeItem("userInfo");
-      setLogInStatus(false);
-
       deleteCookie("refreshToken");
-      router.push("/login");
+      setLogInStatus(false);
       message.success("로그아웃 되었습니다.");
+      router.push("/login");
     } catch (error) {
       if (error instanceof Error) Modal.error({ content: error.message });
     }

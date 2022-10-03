@@ -2,19 +2,20 @@ import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { accessTokenState } from "../../../commons/store";
+import { accessTokenState, isLoadedState } from "../../../commons/store";
 
-export const withAuth = (Component) => (props) => {
+export const withAuth = (Component: any) => (props: any) => {
   const router = useRouter();
 
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [accessToken] = useRecoilState(accessTokenState);
+  const [isLoaded] = useRecoilState(isLoadedState);
 
   useEffect(() => {
-    if (!accessToken) {
-      Modal.error({ content: "로그인 후 이용 가능합니다." });
+    if (isLoaded && !accessToken) {
+      Modal.error({ content: "로그인 후 이용 가능합니다!" });
       router.push("/login");
     }
-  }, []);
+  }, [isLoaded]);
 
   return <Component {...props}></Component>;
 };

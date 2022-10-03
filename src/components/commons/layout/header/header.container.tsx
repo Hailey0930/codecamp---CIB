@@ -2,22 +2,23 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { getUserInfo } from "../../../../commons/libraries/getUserInfo";
-import { logInStatusState } from "../../../../commons/store";
+import { accessTokenState, logInStatusState } from "../../../../commons/store";
 import HeaderPresenter from "./header.presenter";
 
 export default function HeaderContainer() {
   const router = useRouter();
   const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
+  const [accessToken] = useRecoilState(accessTokenState);
 
   const UserInfo = getUserInfo();
 
   useEffect(() => {
-    if (localStorage.getItem("accessToken")) {
+    if (accessToken) {
       setLogInStatus(true);
-    } else if (!localStorage.getItem("accessToken")) {
+    } else if (!accessToken) {
       setLogInStatus(false);
     }
-  }, [logInStatus]);
+  }, [accessToken]);
 
   const onClickLogo = () => {
     router.push("/boards");
