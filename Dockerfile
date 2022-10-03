@@ -1,8 +1,11 @@
-FROM node:14
+FROM node:alpine
 
-COPY . /
-WORKDIR /
+WORKDIR /app
+
+COPY package.json .
 
 RUN yarn install
-RUN yarn build
+
+COPY . .
+
 CMD yarn start
