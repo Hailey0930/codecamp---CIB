@@ -13,6 +13,10 @@ export const Wrapper = styled.div`
   padding: 30px 3%;
   background-color: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+
+  @media ${breakPoints.mobile} {
+    margin-left: 5vw;
+  }
 `;
 
 export const WrapperHeader = styled.div`
@@ -45,8 +49,7 @@ export const WrapperHeaderTitle = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 70%;
-    font-size: 2rem;
+    display: none;
   }
 `;
 
@@ -60,8 +63,7 @@ export const WrapperHeaderBoard = styled.div`
   margin-bottom: 20px;
 
   @media ${breakPoints.mobile} {
-    width: 100%;
-    justify-content: space-around;
+    display: none;
   }
 `;
 
@@ -231,10 +233,10 @@ export const WrapperSearchInput = styled.input`
   background-color: #f2f2f2;
   border-radius: 10px;
   border: none;
+  padding: 1%;
   ::placeholder {
     width: 60%;
     height: 24px;
-    padding: 10px;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -244,8 +246,12 @@ export const WrapperSearchInput = styled.input`
     outline: 2px solid #fed703;
   }
 
+  @media ${breakPoints.tablet} {
+    width: 55%;
+  }
+
   @media ${breakPoints.mobile} {
-    width: 80%;
+    width: 75%;
   }
 `;
 
@@ -286,12 +292,13 @@ export const WrapperSearchButton = styled.button`
   }
 
   @media ${breakPoints.tablet} {
+    width: 15%;
     font-size: 0.9rem;
   }
 
   @media ${breakPoints.mobile} {
-    width: 15%;
-    font-size: 0.8rem;
+    width: 20%;
+    font-size: 0.75rem;
   }
 `;
 
@@ -348,7 +355,7 @@ export const BodyHeadWriter = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 13%;
+    width: 15%;
     font-size: 1rem;
     margin-right: 9%;
   }
@@ -506,8 +513,13 @@ export const WrapperBottom = styled.div`
   justify-content: space-between;
 
   width: 100%;
-  height: 55px;
   padding: 0px 2.5%;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 `;
 
 export const WrapperBottomPageSelect = styled.div`
@@ -522,7 +534,7 @@ export const WrapperBottomPageSelect = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 75%;
+    width: 100%;
   }
 `;
 
@@ -553,7 +565,8 @@ export const WrapperBottomWriteButton = styled.button`
   }
 
   @media ${breakPoints.mobile} {
-    width: 23%;
-    font-size: 0.7rem;
+    width: 30%;
+    font-size: 0.6rem;
+    margin-top: 10px;
   }
 `;

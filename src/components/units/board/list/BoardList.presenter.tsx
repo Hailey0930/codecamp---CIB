@@ -1,17 +1,13 @@
 import * as S from "./BoardList.styles";
 import { CgProfile } from "react-icons/cg";
 import { FaRegThumbsUp } from "react-icons/fa";
-import { BsFillPencilFill } from "react-icons/bs";
 import { getDate } from "../../../../commons/libraries/utils";
 import { IBoardListUIProps } from "./BoardList.types";
 import BoardListPagination from "../../../commons/pagination-boardList/Pagination-boardList.container";
 import moment from "moment";
-import { DatePicker } from "antd";
 import { v4 as uuidv4 } from "uuid";
 
 export default function BoardListPresenterPage(props: IBoardListUIProps) {
-  const { RangePicker } = DatePicker;
-
   const dateFormat = "YYYY-MM-DD";
 
   return (

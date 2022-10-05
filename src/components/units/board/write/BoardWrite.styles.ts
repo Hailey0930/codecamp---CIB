@@ -13,6 +13,10 @@ export const Wrapper = styled.div`
   padding: 30px 3%;
   background-color: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+
+  @media ${breakPoints.mobile} {
+    margin-left: 5vw;
+  }
 `;
 
 export const WrapperHeader = styled.div`
@@ -162,7 +166,8 @@ export const AddressSearch = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 50%;
+    justify-content: flex-start;
+    width: 70%;
   }
 `;
 
@@ -170,6 +175,11 @@ export const ContentsInputAddress = styled.input`
   width: 40%;
   height: 52px;
   border: 1px solid #bdbdbd;
+
+  @media ${breakPoints.mobile} {
+    width: 30%;
+    margin-right: 5%;
+  }
 
   ::placeholder {
     font-size: 1rem;
@@ -211,6 +221,7 @@ export const AddressButton = styled.button`
   }
 
   @media ${breakPoints.mobile} {
+    width: 50%;
     font-size: 0.8rem;
   }
 `;

@@ -38,6 +38,6 @@ export const NavigationButton = styled.button`
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 `;
