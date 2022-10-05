@@ -1,13 +1,15 @@
 import styled from "@emotion/styled";
 import { Modal, Rate } from "antd";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const CommentsListDetail = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
 
+  width: 90vw;
   border-bottom: 1px solid #bdbdbd;
-  padding: 10px;
+  padding: 10px 0px;
 `;
 
 export const CommentsDetailImage = styled.img`
@@ -16,17 +18,36 @@ export const CommentsDetailImage = styled.img`
   align-items: flex-start;
   justify-content: center;
 
-  width: 60px;
+  width: 5%;
   height: 60px;
+  margin-right: 1%;
+
+  @media ${breakPoints.tablet} {
+    width: 7%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 12%;
+    height: 50px;
+    margin-right: 3%;
+  }
 `;
 
 export const CommentsDetailMain = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 1100px;
-  height: 100px;
-  padding: 10px;
+  width: 85%;
+  padding: 10px 1%;
+
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 60%;
+    margin-right: 5%;
+  }
 `;
 
 export const CommentsDetailInfo = styled.div`
@@ -34,8 +55,16 @@ export const CommentsDetailInfo = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  width: 320px;
+  width: 30%;
   margin-bottom: 5px;
+
+  @media ${breakPoints.tablet} {
+    width: 50%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 
 export const DetailInfoUser = styled.div`
@@ -43,9 +72,10 @@ export const DetailInfoUser = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  width: 30%;
   height: 24px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   line-height: 24px;
 `;
 
@@ -55,13 +85,13 @@ export const DetailInfoRating = styled(Rate)`
   justify-content: center;
   align-items: center;
 
-  width: 200px;
+  width: 65%;
   height: 20px;
 `;
 
 export const CommentsDetailContents = styled.div`
-  width: 800px;
-  font-size: 16px;
+  width: 100%;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 24px;
   color: #4f4f4f;
@@ -73,9 +103,9 @@ export const CommentsDetailDate = styled.div`
   flex-direction: column;
   justify-content: end;
 
-  width: 100px;
+  width: 60%;
   height: 18px;
-  font-size: 12px;
+  font-size: 0.7rem;
   font-weight: 400;
   line-height: 18px;
   color: #bdbdbd;
@@ -84,10 +114,18 @@ export const CommentsDetailDate = styled.div`
 export const CommentsDetailButton = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 
-  width: 70px;
+  width: 10%;
   height: 100px;
+
+  @media ${breakPoints.tablet} {
+    width: 10%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 20%;
+  }
 `;
 
 export const DetailButtonEdit = styled.button`
@@ -96,12 +134,20 @@ export const DetailButtonEdit = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 30px;
+  width: 30%;
   height: 30px;
   margin-top: 5px;
   background-color: #ffffff;
   border: none;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    width: 40%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 45%;
+  }
 `;
 
 export const DetailButtonDelete = styled.button`
@@ -110,12 +156,20 @@ export const DetailButtonDelete = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 30px;
+  width: 30%;
   height: 30px;
   margin-top: 5px;
   background-color: #ffffff;
   border: none;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    width: 40%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 45%;
+  }
 `;
 
 export const PasswordModal = styled(Modal)``;
@@ -132,39 +186,11 @@ export const DetailInfoPassword = styled.input`
 
 export const CommentsDetailContentsEdit = styled.div``;
 
-export const CommentsContentsEditInput = styled.textarea`
-  border: 1px solid #bdbdbd;
-  width: 1000px;
-  height: 40px;
-  font-size: 16px;
-`;
-
-export const CommentsEditButton = styled.button`
-  background-color: black;
-  color: white;
-  width: 80px;
-  height: 50px;
-  margin-right: 10px;
-  cursor: pointer;
-`;
-
-export const CommentsInfoRating = styled(Rate)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 140px;
-  height: 30px;
-  background-color: #ffffff;
-  border: none;
-  cursor: pointer;
-`;
-
 export const CommentWriteContainerDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-  width: 1300px;
-  padding-right: 100px;
+  width: 100%;
   margin-bottom: 30px;
 `;

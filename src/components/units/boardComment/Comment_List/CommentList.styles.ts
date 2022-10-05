@@ -5,7 +5,6 @@ export const CommentsList = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 1300px;
-  padding: 10px;
-  margin-left: 100px;
+  width: 100%;
+  padding: 10px 0px;
 `;
