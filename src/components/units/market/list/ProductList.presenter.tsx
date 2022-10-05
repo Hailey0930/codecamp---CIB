@@ -2,15 +2,13 @@ import * as S from "./ProductList.styles";
 import { FaHeart } from "react-icons/fa";
 import { GiMoneyStack } from "react-icons/gi";
 import { BsFillPencilFill } from "react-icons/bs";
-import { DatePicker } from "antd";
+
 import moment from "moment";
 import { IProductListPresenterProps } from "./ProductList.types";
 
 export default function ProductListPresenter(
   props: IProductListPresenterProps
 ) {
-  const { RangePicker } = DatePicker;
-
   const dateFormat = "YYYY-MM-DD";
 
   return (
@@ -132,14 +130,13 @@ export default function ProductListPresenter(
         </S.CategoryButton>
         <S.SearchBody>
           <S.WrapperSearchInput placeholder="제품을 검색해주세요."></S.WrapperSearchInput>
-          <RangePicker
+          <S.RangePickerStyle
             defaultValue={[
               moment("2022-01-01", dateFormat),
               moment("2022-01-31", dateFormat),
             ]}
             format={dateFormat}
-            style={{ width: "270px", height: "52px", fontSize: "18px" }}
-          ></RangePicker>
+          ></S.RangePickerStyle>
           <S.SearchButton>검색하기</S.SearchButton>
         </S.SearchBody>
       </S.WrapperSearch>
@@ -180,7 +177,7 @@ export default function ProductListPresenter(
                           <FaHeart
                             style={{
                               width: "20px",
-                              height: "18px",
+                              height: "30px",
                               color: "#ffd600",
                             }}
                           />
@@ -195,8 +192,8 @@ export default function ProductListPresenter(
                   <S.PriceIcon>
                     <GiMoneyStack
                       style={{
-                        width: "40px",
-                        height: "40px",
+                        width: "35px",
+                        height: "35px",
                         color: "#ffd600",
                       }}
                     />
