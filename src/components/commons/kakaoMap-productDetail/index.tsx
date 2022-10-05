@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useEffect } from "react";
+import { breakPoints } from "../../../commons/styles/media";
 import { IQuery } from "../../../commons/types/generated/types";
 
 declare const window: typeof globalThis & {
@@ -7,11 +8,19 @@ declare const window: typeof globalThis & {
 };
 
 const Map = styled.div`
-  width: 792px;
+  width: 70%;
   height: 360px;
 
   margin-top: 20px;
   margin-bottom: 70px;
+
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 interface IKakaoMapProps {
