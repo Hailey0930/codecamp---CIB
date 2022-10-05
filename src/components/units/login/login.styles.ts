@@ -1,15 +1,20 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 1300px;
-  margin: 100px;
+  width: 90vw;
+  margin: 100px 0px;
   padding: 30px;
   background-color: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+
+  @media ${breakPoints.mobile} {
+    margin-left: 5vw;
+  }
 `;
 
 export const Title = styled.div`
@@ -17,14 +22,23 @@ export const Title = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 1000px;
-  font-size: 70px;
+  width: 100%;
+  font-size: 4.375rem;
   font-weight: 400px;
   margin-top: 20px;
   margin-bottom: 50px;
   font-family: "SBAggroB";
   color: #ffd600;
   text-shadow: 1px 1px 1px #000;
+
+  @media ${breakPoints.tablet} {
+    font-size: 4.1rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 20px;
+    font-size: 4rem;
+  }
 `;
 
 export const WrapperBody = styled.div`
@@ -32,17 +46,33 @@ export const WrapperBody = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 1000px;
+  width: 90%;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10%;
   margin-bottom: 100px;
   border: 3px dashed #ffd600;
+
+  @media ${breakPoints.mobile} {
+    box-shadow: none;
+    border: none;
+  }
 `;
 
 export const Image = styled.img`
-  width: 300px;
+  width: 30%;
   height: 300px;
   margin-top: 70px;
+
+  @media ${breakPoints.tablet} {
+    width: 40%;
+    height: 250px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 60%;
+    height: 200px;
+    margin-top: 50px;
+  }
 `;
 
 export const LoginBody = styled.div`
@@ -50,44 +80,61 @@ export const LoginBody = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 800px;
+  width: 50%;
   margin-top: 50px;
   margin-bottom: 30px;
+
+  @media ${breakPoints.tablet} {
+    width: 60%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const LoginDiv = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
-  width: 500px;
-  padding: 10px;
+  width: 100%;
+  padding: 10px 0px;
 `;
 
 export const LoginTitle = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
 
-  width: 100px;
-  font-size: 25px;
+  width: 20%;
+  font-size: 1.5625rem;
   font-family: "SBAggroB";
   color: #ffd600;
-  margin-right: 20px;
+
+  @media ${breakPoints.mobile} {
+    width: 10%;
+    font-size: 1.3rem;
+  }
 `;
 
 export const LoginInput = styled.input`
-  width: 270px;
+  width: 70%;
   height: 30px;
   border: none;
   border-bottom: 1px solid gray;
-  font-size: 25px;
-  padding: 10px;
+  font-size: 1.5625rem;
+  padding: 10px 0px;
 
   :focus {
     outline: none;
     background-color: #fff2ae;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 80%;
+    font-size: 1rem;
   }
 `;
 
@@ -96,24 +143,35 @@ export const ErrorMessage = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  width: 200px;
-  font-size: 12px;
-  margin-left: 110px;
+  width: 70%;
+  font-size: 1rem;
   color: red;
+  margin-left: 30%;
+
+  @media ${breakPoints.mobile} {
+    width: 80%;
+    font-size: 0.8rem;
+    margin-left: 20%;
+  }
 `;
 
 export const LoginButton = styled.button`
-  width: 250px;
+  width: 50%;
   height: 50px;
   font-family: "SDSamliphopangche_Outline";
-  font-size: 25px;
+  font-size: 1.5625rem;
   background-color: #fff2ae;
   border: none;
   color: black;
-  margin-top: 30px;
+  margin-top: 70px;
   text-shadow: 1px 1px 1px #ffd600;
   border-radius: 10px;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 80%;
+    font-size: 1.3rem;
+  }
 
   :hover {
     background-color: #ffd600;
@@ -123,21 +181,37 @@ export const LoginButton = styled.button`
 export const LoginFooter = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 
-  width: 500px;
-  margin-top: 10px;
+  width: 45%;
+  margin-top: 30px;
   margin-bottom: 70px;
+
+  @media ${breakPoints.tablet} {
+    width: 60%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const FooterButton = styled.button`
   background-color: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: black;
   text-shadow: 1px 1px 1px #ffd600;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    font-size: 1rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.85rem;
+  }
 
   :hover {
     color: #ffd600;
