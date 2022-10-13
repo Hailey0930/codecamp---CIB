@@ -2,7 +2,7 @@ import { useMutation } from "@apollo/client";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { message, Modal } from "antd";
 import { useRouter } from "next/router";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   IMutation,
@@ -10,17 +10,13 @@ import {
   IMutationUpdateUseditemArgs,
   IUpdateUseditemInput,
 } from "../../../../commons/types/generated/types";
-import { useAuth } from "../../../commons/hooks/useAuth";
+import { withAuth } from "../../../commons/hoc/withAuth";
 import ProductWritePresenter from "./ProductWrite.presenter";
 import { CREATE_USED_ITEM, UPDATE_USED_ITEM } from "./ProductWrite.queries";
 import { schema } from "./ProductWrite.schema";
 import { IProductWriteContainerProps } from "./ProductWrite.types";
 
-export default function ProductWriteContainer(
-  props: IProductWriteContainerProps
-) {
-  useAuth();
-
+function ProductWriteContainer(props: IProductWriteContainerProps) {
   useEffect(() => {
     if (props.data !== undefined) {
       reset({
@@ -184,3 +180,5 @@ export default function ProductWriteContainer(
     ></ProductWritePresenter>
   );
 }
+
+export default withAuth(ProductWriteContainer);
