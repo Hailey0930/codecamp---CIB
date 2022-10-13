@@ -9,7 +9,6 @@ import {
   IQuery,
   IQueryFetchUseditemArgs,
 } from "../../../../commons/types/generated/types";
-import { withAuth } from "../../../commons/hoc/withAuth";
 import ProductDetailPresenter from "./ProductDetail.presenter";
 import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
@@ -18,7 +17,7 @@ import {
   TOGGLE_USED_ITEM_PICK,
 } from "./ProductDetail.queries";
 
-function ProductDetailContainer() {
+export default function ProductDetailContainer() {
   const UserInfo = getUserInfo();
 
   const router = useRouter();
@@ -108,5 +107,3 @@ function ProductDetailContainer() {
     </>
   );
 }
-
-export default withAuth(ProductDetailContainer);

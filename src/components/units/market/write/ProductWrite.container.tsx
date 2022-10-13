@@ -10,14 +10,15 @@ import {
   IMutationUpdateUseditemArgs,
   IUpdateUseditemInput,
 } from "../../../../commons/types/generated/types";
-import { withAuth } from "../../../commons/hoc/withAuth";
 
 import ProductWritePresenter from "./ProductWrite.presenter";
 import { CREATE_USED_ITEM, UPDATE_USED_ITEM } from "./ProductWrite.queries";
 import { schema } from "./ProductWrite.schema";
 import { IProductWriteContainerProps } from "./ProductWrite.types";
 
-function ProductWriteContainer(props: IProductWriteContainerProps) {
+export default function ProductWriteContainer(
+  props: IProductWriteContainerProps
+) {
   useEffect(() => {
     if (props.data !== undefined) {
       reset({
@@ -181,5 +182,3 @@ function ProductWriteContainer(props: IProductWriteContainerProps) {
     ></ProductWritePresenter>
   );
 }
-
-export default withAuth(ProductWriteContainer);

@@ -4,6 +4,7 @@ import {
   IQuery,
   IQueryFetchUseditemArgs,
 } from "../../../../src/commons/types/generated/types";
+import { withAuth } from "../../../../src/components/commons/hoc/withAuth";
 import ProductWriteContainer from "../../../../src/components/units/market/write/ProductWrite.container";
 
 const FETCH_USED_ITEM = gql`
@@ -38,7 +39,7 @@ const FETCH_USED_ITEM = gql`
   }
 `;
 
-export default function ProductEditPage() {
+function ProductEditPage() {
   const router = useRouter();
 
   const { data } = useQuery<
@@ -52,3 +53,5 @@ export default function ProductEditPage() {
     <ProductWriteContainer data={data} isEdit={true}></ProductWriteContainer>
   );
 }
+
+export default withAuth(ProductEditPage);
