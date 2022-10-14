@@ -6,7 +6,7 @@ export const accessTokenState = atom({
 });
 
 export const logInStatusState = atom({
-  key: "logInStatus",
+  key: "logInStatusState",
   default: false,
 });
 
