@@ -1,5 +1,4 @@
 import * as S from "../write/ProductWrite.styles";
-import { BiMap } from "react-icons/bi";
 import { IProductWritePresenterProps } from "./ProductWrite.types";
 import UploadImageContainer from "../../../commons/uploadImage-productWrite/UploadImage.container";
 import { v4 as uuidv4 } from "uuid";
@@ -110,9 +109,6 @@ export default function ProductWritePresenter(
                 >
                   검색하기
                 </S.AddressButton>
-                <S.ZipcodeContents>
-                  주소를 검색하시면 위치가 지도에 표시됩니다!
-                </S.ZipcodeContents>
               </S.ZipcodeDiv>
               <S.AddressInput
                 placeholder="기본 주소"
@@ -139,20 +135,6 @@ export default function ProductWritePresenter(
               ))}
             </S.PhotoWrapper>
           </S.BodyPhoto>
-
-          <S.BodyMainSetting>
-            <S.DetailTitle>메인 사진 설정</S.DetailTitle>
-            <S.SettingDiv>
-              <S.SettingBody>
-                <S.SettingButton type="radio"></S.SettingButton>
-                <S.SettingTitle>사진 1</S.SettingTitle>
-              </S.SettingBody>
-              <S.SettingBody>
-                <S.SettingButton type="radio"></S.SettingButton>
-                <S.SettingTitle>사진 2</S.SettingTitle>
-              </S.SettingBody>
-            </S.SettingDiv>
-          </S.BodyMainSetting>
         </S.WrapperBody>
 
         <S.ButtonWrapper>

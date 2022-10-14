@@ -7,7 +7,7 @@ declare const window: typeof globalThis & {
 };
 
 const Map = styled.div`
-  width: 384px;
+  width: 90%;
   height: 252px;
 `;
 
